@@ -1,5 +1,6 @@
 import React from 'react';
 import Business from './Business';
+import styles from './BusinessList.module.css';
 
 const businesses = [
   {
@@ -42,7 +43,7 @@ const businesses = [
 
 function BusinessList(props) {
   return (
-    <section className="businessListContainer">
+    <section className={styles.businessListContainer}>
       {businesses.map((business, index) => (
         <Business key={business.name + index} restaurant={business} />
       ))}

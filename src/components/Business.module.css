@@ -45,7 +45,7 @@ h3 {
 .category,
 .rating {
   color: var(--yellow);
-  font-weight: 900;
+  font-weight: 700;
   justify-self: end;
 }
 
