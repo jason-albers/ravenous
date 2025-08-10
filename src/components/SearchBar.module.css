@@ -1,0 +1,71 @@
+.searchBarContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 30vh;
+  padding: 5rem 0;
+  background-image: url('../assets/search-background.jpg');
+  background-size: cover;
+}
+
+.sortButtons {
+  display: flex;
+  border-bottom: 1px solid white;
+  width: 40%;
+  margin: 0 auto;
+  justify-content: space-around;
+}
+
+.sortButton {
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 1.1rem;
+  max-width: 100px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.searchForm {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 70%;
+}
+
+.searchBars {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.searchBars input {
+  width: 30vw;
+  height: 1.5rem;
+  padding: 8px;
+  margin: 0px 16px;
+  border-radius: 4px;
+}
+
+.searchForm input:focus {
+  outline: none;
+  border: 2px solid #61dafb;
+}
+
+.searchButton {
+  background-color: hsl(40 70% 60%);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  font-weight: bold;
+  width: 10vw;
+  border-radius: 4px;
+  text-wrap: nowrap;
+  margin-top: 3rem;
+  align-self: center;
+}

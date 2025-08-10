@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './SearchBar.module.css';
 
 function SearchBar({ searchTerm, location, handleSort }) {
   function handleSubmit(event) {
@@ -37,43 +38,45 @@ function SearchBar({ searchTerm, location, handleSort }) {
 */
 
   return (
-    <section className="searchBarContainer">
-      <div className="sortButtons">
+    <section className={styles.searchBarContainer}>
+      <div className={styles.sortButtons}>
         <button
-          className="sortButton"
+          className={styles.sortButton}
           onClick={(match) => handleSort(match)}
         >
           Best Match
         </button>
         <button
-          className="sortButton"
+          className={styles.sortButton}
           onClick={(ratings) => handleSort(ratings)}
         >
           Highest Rated
         </button>
         <button
-          className="sortButton"
+          className={styles.sortButton}
           onClick={(reviews) => handleSort(reviews)}
         >
           Most Reviewed
         </button>
       </div>
-      <form className="searchForm">
-        <input
-          type="text"
-          className="searchInput"
-          placeholder="Search Businesses"
-          value={searchTerm}
-        />
-        <input
-          type="text"
-          className="locationInput"
-          placeholder="Location"
-          value={location}
-        />
+      <form className={styles.searchForm}>
+        <div className={styles.searchBars}>
+          <input
+            type="text"
+            className="searchInput"
+            placeholder="Search Businesses"
+            value={searchTerm}
+          />
+          <input
+            type="text"
+            className="locationInput"
+            placeholder="Location"
+            value={location}
+          />
+        </div>
         <button
           type="submit"
-          className="searchButton"
+          className={styles.searchButton}
           onSubmit={handleSubmit}
         >
           Let's Go
