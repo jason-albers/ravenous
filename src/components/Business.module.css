@@ -1,0 +1,58 @@
+.businessContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  width: 300px;
+  padding: 8px;
+}
+
+img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+}
+
+h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-top: 12px;
+  margin-bottom: 4px;
+  line-height: 1;
+}
+
+.businessDetails {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.infoContainer {
+  line-height: 0.2;
+}
+
+.category {
+  font-size: 1.1rem;
+}
+
+.infoContainer p {
+  --yellow: hsl(40 80% 50%);
+}
+
+.info {
+  font-size: 0.9em;
+}
+
+.category,
+.rating {
+  color: var(--yellow);
+  font-weight: 900;
+  justify-self: end;
+}
+
+.rating {
+  font-size: 0.8rem;
+}
+
+.restaurantInfo {
+  line-height: 0;
+}
