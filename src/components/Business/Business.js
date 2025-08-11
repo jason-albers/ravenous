@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 import React from 'react';
 import styles from './Business.module.css';
+=======
+import React from "react";
+import styles from "./Business.module.css";
+>>>>>>> 2994f465 (Completed Ravenous project step 3)
 
 const Business = ({ business }) => {
   return (
@@ -16,9 +21,13 @@ const Business = ({ business }) => {
         </div>
         <div className={styles.BusinessReviews}>
           <h3>{business.category.toUpperCase()}</h3>
+<<<<<<< HEAD
           <h3
             className={styles.rating}
           >{`${business.rating} stars`}</h3>
+=======
+          <h3 className={styles.rating}>{`${business.rating} stars`}</h3>
+>>>>>>> 2994f465 (Completed Ravenous project step 3)
           <p>{`${business.reviewCount} reviews`}</p>
         </div>
       </div>
