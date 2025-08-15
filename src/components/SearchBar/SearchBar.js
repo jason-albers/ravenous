@@ -7,28 +7,35 @@ const sortByOptions = {
   'Most Reviewed': 'review_count',
 };
 
-const SearchBar = () => {
-  const [searchTerm, setSearchTerm] = useState('');
+const SearchBar = ({ searchYelp, setBusinesses }) => {
+  const [term, setTerm] = useState('');
   const [location, setLocation] = useState('');
   const [sortBy, setSortBy] = useState('best_match');
 
-  const handleSortByChange = (value) => {
-    setSortBy(value);
+  const getSortByClass = (sortByOption) => {
+    if (sortBy === sortByOption) {
+      return styles.active;
+    }
+    return '';
   };
 
-  const handleSearch = (e) => {
-    setSearchTerm(e.target.value);
+  const handleSortByChange = (sortByOption) => {
+    setSortBy(sortByOption);
   };
 
-  const handleLocation = (e) => {
-    setLocation(e.target.value);
+  const handleTermChange = (event) => {
+    setTerm(event.target.value);
   };
 
-  const handleSubmit = () => {
-    // Example message for button
-    console.log(
-      `Searching Yelp with ${searchTerm}, ${location}, ${sortBy}`
-    );
+  const handleLocationChange = (event) => {
+    setLocation(event.target.value);
+  };
+
+  const handleSearch = async (event) => {
+    event.preventDefault();
+    const results = await searchYelp(term, location, sortBy);
+    console.log(results);
+    setBusinesses(results.businesses);
   };
 
   const renderSortByOptions = () => {
@@ -36,12 +43,11 @@ const SearchBar = () => {
       let sortByOptionValue = sortByOptions[sortByOption];
       return (
         <li
+          className={getSortByClass(sortByOptionValue)}
           key={sortByOptionValue}
-          value={sortBy}
-          className={
-            sortBy === sortByOptionValue ? styles.active : ''
-          }
-          onClick={() => handleSortByChange(sortByOptionValue)}
+          onClick={() => {
+            handleSortByChange(sortByOptionValue);
+          }}
         >
           {sortByOption}
         </li>
@@ -54,21 +60,21 @@ const SearchBar = () => {
       <div className={styles.SearchBarSortOptions}>
         <ul>{renderSortByOptions()}</ul>
       </div>
-      <div className={styles.SearchBarFields}>
-        <input
-          placeholder="Search Businesses"
-          value={searchTerm}
-          onChange={handleSearch}
-        />
-        <input
-          placeholder="Where?"
-          value={location}
-          onChange={handleLocation}
-        />
-      </div>
-      <div className={styles.SearchBarSubmit}>
-        <a onClick={handleSubmit}>Let's Go</a>
-      </div>
+      <form onSubmit={handleSearch}>
+        <div className={styles.SearchBarFields}>
+          <input
+            placeholder="Search Businesses"
+            onChange={handleTermChange}
+          />
+          <input
+            placeholder="Where?"
+            onChange={handleLocationChange}
+          />
+        </div>
+        <div className={styles.SearchBarSubmit}>
+          <button type="submit">Let's Go</button>
+        </div>
+      </form>
     </div>
   );
 };
