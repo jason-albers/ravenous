@@ -1,5 +1,5 @@
 const apiKey =
-  'RatOGx_n6gQbmdD4iHAd2nzB-QKGJ9ieMlo-2ivp_iTV7Ndq2DTnJHqXxzfb2Six393FC3WgBGZkNvZzFkxDcWKSZefb8RkARviv6GofbqxjCp9j9hfSzaYUCOmbaHYx';
+  '[removed]';
 
 const searchYelp = async (term, location, sortBy) => {
   const corsUrl = 'https://cors-anywhere.herokuapp.com/';
